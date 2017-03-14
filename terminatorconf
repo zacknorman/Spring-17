@@ -1,0 +1,32 @@
+[global_config]
+  title_inactive_bg_color = "#999f91"
+  title_inactive_fg_color = "#746c48"
+  title_transmit_bg_color = "#26251c"
+  title_transmit_fg_color = "#746c48"
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#170f0d"
+    background_darkness = 0.75
+    background_type = transparent
+    copy_on_selection = True
+    cursor_color = "#c17d11"
+    cursor_color_fg = False
+    cursor_shape = underline
+    font = profont Medium Semi-Condensed 11
+    foreground_color = "#746c48"
+    palette = "#26251c:#323027:#3d4339:#443b2c:#534d35:#646756:#7b8574:#837b61:#999f91:#9b9773:#b2b08c:#c4bb8c:#c4b67a:#cfc995:#d3d4b6:#d6d3ac"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
