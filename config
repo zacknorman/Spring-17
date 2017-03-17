@@ -160,16 +160,16 @@ bar {
 
 
 for_window [class="^.*"] border pixel 2
-gaps outer 30
-gaps inner 15
+gaps outer 20
+gaps inner 10
 
 #WINDOW DECORATION COLORS     Border    Background   Text      Indicator
-client.focused                #B88157   #B88157      #ffffff   #FF8936
-client.focused_inactive       #D45800   #7C5F45      #333333   #D45800
-client.unfocused              #7C5F45   #7C5F45      #7C5F45   #7C5F45
+client.focused                #3F262B   #3F262B      #ffffff   #FF8936
+client.focused_inactive       #263F3A   #263F3A      #333333   #D45800
+client.unfocused              #263F3A   #263F3A      #7C5F45   #7C5F45
 client.urgent                 #F80018   #F80018      #ffffff   #F80018
 
-exec --no-startup-id compton --config /home/atlas/.config/compton.conf
+exec --no-startup-id compton --config /home/atlas/.config/compton.conf -f
 
 exec --no-startup-id /home/atlas/i3-alternating-layout/alternating_layouts.py
 
@@ -184,6 +184,6 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc +10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -inc -10
 
 #bindsym $mod+d exec rofi -show run -lines 3 -width 100 -padding 475 -eh 2 -color-enabled -opacity "70" -bw 4 -bc "#262626" -fg "$text-color" -hlbg "#262626" -hlfg "#9575cd" -font "Terminus 18"
-bindsym $mod+d exec rofi -show run -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"  
+bindsym $mod+d exec rofi -show run -font "terminus 18" -fg "#263F3A" -bg "#3F262B" -hlfg "3F262B" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"  
 
 exec --no-startup-id /home/atlas/i3-alternating-layout/i3-alternating_layouts.py
