@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -32,8 +32,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec terminator
 
+
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+w kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -77,7 +78,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+r exec rofi -show run -lines 3 -width 100 -padding 300 -eh 2 -color-enabled -opacity "70" -bw 4 -bc "#262626" -fg "$
 
@@ -153,20 +154,17 @@ mode "resize" {
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-bar {
-    i3bar_command /home/atlas/.config/panel/bar_config
-    
-}
+exec --no-startup-id polybar -c /home/atlas/.config/bar/darkpx/polybar top
 
 
 for_window [class="^.*"] border pixel 2
-gaps outer 20
-gaps inner 10
+gaps outer 30
+gaps inner 18
 
 #WINDOW DECORATION COLORS     Border    Background   Text      Indicator
-client.focused                #3F262B   #3F262B      #ffffff   #FF8936
-client.focused_inactive       #263F3A   #263F3A      #333333   #D45800
-client.unfocused              #263F3A   #263F3A      #7C5F45   #7C5F45
+client.focused                #AAEEFF   #AAEEFF      #DBDBDB   #AAEEFF
+client.focused_inactive       #263F3A   #263F3A      #333333   #263F3A
+client.unfocused              #263F3A   #263F3A      #7C5F45   #263F3A
 client.urgent                 #F80018   #F80018      #ffffff   #F80018
 
 exec --no-startup-id compton --config /home/atlas/.config/compton.conf -f
@@ -183,7 +181,8 @@ exec --no-startup-id nitrogen --restore
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc +10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -inc -10
 
-#bindsym $mod+d exec rofi -show run -lines 3 -width 100 -padding 475 -eh 2 -color-enabled -opacity "70" -bw 4 -bc "#262626" -fg "$text-color" -hlbg "#262626" -hlfg "#9575cd" -font "Terminus 18"
-bindsym $mod+d exec rofi -show run -font "terminus 18" -fg "#263F3A" -bg "#3F262B" -hlfg "3F262B" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"  
+bindsym $mod+d exec rofi -show run -font "Terminus 18"
+#bindsym $mod+d exec rofi -show run -lines 3 -color-window "\#2f383f\, \#aaeeff\, \#aaeeff" -color-normal "\#cadbff\, \#000101\, \#c4d4f7\, \#2f343f\, \#aaeeff" -color-active "\#fdf6e3\, \#268bd2\, \#eee8d5\, \#268bd2\, \#fdf6e3" -color-urgent "\#fdf6e3\, \#dc322f\, \#eee8d5\, \#dc322f\, \#fdf6e3" -font "Terminus 20"
 
 exec --no-startup-id /home/atlas/i3-alternating-layout/i3-alternating_layouts.py
+exec --no-startup-id xrandr -s 2560x1600
